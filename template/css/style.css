@@ -1,0 +1,19 @@
+/*列表页面*/
+.ui-tiled li div{
+    line-height: 50px;
+}
+.driverMain{
+    width: 100%;
+
+}
+.driverMain h5{
+    display: block;
+    margin-left: 10px;
+    margin-top: 5px;
+    clear: both;
+}
+.driverMain p{
+    display: block;
+    float:left;
+    margin-left: 10px;
+}
