@@ -26,9 +26,7 @@
 		</cover>
 		<menu>
 			<entry title="约车订单管理" do="order" state="" direct="false" />
-		</menu>
-		<menu>
-			<entry title="配置项管理" do="config" state="" direct="false" />
+		    <entry title="配置项管理" do="config" state="" direct="false" />
 		</menu>
 		<home>
 			<entry title="微信约车" do="bookcar" state="" direct="true" />

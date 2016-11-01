@@ -28,6 +28,11 @@ class Wx_bookcarModuleSite extends WeModuleSite {
 	    require_once(dirname(__FILE__)."/inc/doWebOrder.php");
 		//这个操作被定义用来呈现 管理中心导航菜单
 	}
+	public function doWebConfig() {
+	    
+	    require_once(dirname(__FILE__)."/inc/doWebConfig.php");
+		//这个操作被定义用来呈现 管理中心导航菜单
+	}
 	public function doMobilePersonal() {
 		//这个操作被定义用来呈现 微站个人中心导航
 		 require_once(dirname(__FILE__)."/inc/doMobilePersonal.php");
