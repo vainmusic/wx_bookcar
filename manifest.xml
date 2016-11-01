@@ -51,6 +51,12 @@ CREATE TABLE `ims_wx_bookcar_config` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;
+-- ----------------------------
+-- Records of ims_wx_bookcar_config
+-- ----------------------------
+INSERT INTO `ims_wx_bookcar_config` VALUES ('0', '0', 'price', null);
+INSERT INTO `ims_wx_bookcar_config` VALUES ('1', '0', 'text', null);
+SET FOREIGN_KEY_CHECKS=1;
 
 -- ----------------------------
 -- Table structure for ims_wx_bookcar_drivers
