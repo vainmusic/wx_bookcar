@@ -10,28 +10,50 @@ defined('IN_IA') or exit('Access Denied');
 class Wx_bookcarModuleSite extends WeModuleSite {
 
     function __construct(){
-        global $_W;
-        // if(!$_W['openid'])die();
+       global $_W;
+       // if(!$_W['openid'])die();
     }
 
-    public function doMobileIndex() {
-
+	public function doMobileIndex() {
+	    
         require_once(dirname(__FILE__)."/inc/doMobileIndex.php");
-    }
+	}
     public function doMobileDriver() {
         //这个操作被定义用来呈现 功能封面
-        include $this->template('driver');
+        require_once(dirname(__FILE__)."/inc/doMobileDriver.php");
     }
 
-    public function doWebOrder() {
+	public function doWebOrder() {
+	    
+	    require_once(dirname(__FILE__)."/inc/doWebOrder.php");
+		//这个操作被定义用来呈现 管理中心导航菜单
+	}
+	public function doMobilePersonal() {
+		//这个操作被定义用来呈现 微站个人中心导航
+		 require_once(dirname(__FILE__)."/inc/doMobilePersonal.php");
+	}
+	
+	public function doMobileJoin(){
+	    require_once(dirname(__FILE__)."/inc/doMobileJoin.php");
+	}
+	public function doMobileUpdata(){
+	    require_once(dirname(__FILE__)."/inc/doMobileUpdata.php");
+	}
+	public function doMobileInsert(){
+	    require_once(dirname(__FILE__)."/inc/doMobileInsert.php");
+	}
+	public function doMobileUppicture(){
+	    require_once(dirname(__FILE__)."/inc/doMobileUppicture.php");
+	}
+	public function doMobileUpload(){
+	        require_once(dirname(__FILE__)."/inc/doMobileUpload.php");
+	}
 
-        var_dump(123);
-        //这个操作被定义用来呈现 管理中心导航菜单
-    }
-    public function doMobilePersonal() {
-        //这个操作被定义用来呈现 微站个人中心导航
-    }
 
+    public function payResult($params) {
+         require_once(dirname(__FILE__)."/inc/payResult.php");
+        	
+    }
 
 
 }

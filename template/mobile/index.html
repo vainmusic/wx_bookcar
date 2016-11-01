@@ -21,136 +21,42 @@
 </head>
 <body>
 <div class="demo-block">
-<header class="ui-header ui-header-positive ui-border-b">
-                <h1>约车列表</h1>
-            </header>
-    <footer class="ui-footer ui-footer-stable ui-border-t">
-        <ul class="ui-tiled">
-            <li><div>期待</div></li>
-            <li><div>期待</div></li>
-            <li onclick="tz()"><div>个人中心</div></li>
-        </ul>
-    </footer>
-    <section class="ui-container ">
-       <!-- 内容-->
-        <ul class="ui-list ui-list-function ui-list-link ui-border-tb">
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-            <li class="ui-border-t">
-                <div class="ui-avatar">
-                    <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
-                </div>
-                <div class="ui-list-info">
-                    <h4 class="ui-nowrap">林师傅</h4>
-                    <h5>半小时前位置</h5>
-                    <p>闽侯县上街镇</p>
-                </div>
-                <div class="ui-btn">联系我</div>
-            </li>
-
-        </ul>
-    </section>
+    <div class="cd ui-header ui-border-b">
+        <div class="tital">
+         <h4>约车列表</h4>   
+        </div>
+    </div>
+    {if $id == null}
+<button class="btn ui-btn-primary" onclick="join()">加入</button>
+{else}
+<button class="btn ui-btn-primary" onclick="tz()">个人中心</button>
+{/if}
+    
+    <div class="main">
+        <section class="ui-container ">
+           <ul class="ui-list ui-list-function  ui-border-tb">
+               {loop  $datas $data}
+                    <li class="ui-border-t" style="height:100px">
+                        <div class="ui-avatar-one" style="margin-top:15px">
+                            <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
+                        </div>
+                        <div class="ui-list-info">
+                            <h4 class="ui-nowrap" style="margin-left:15px">{$data['name']}</h4>
+                        </div>
+                        <div class="ui-btn">联系我</div>
+                    </li>
+                {/loop}
+            </ul>
+        </section>
+    </div>
 </div>
+
 <script>
     function tz() {
         window.location.href='{php echo $this->createMobileUrl('driver')}'
+    }
+    function join(){
+        window.location.href='{php echo $this->createMobileUrl('join')}'
     }
 </script>
 </body>

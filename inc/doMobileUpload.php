@@ -1,0 +1,9 @@
+<?php
+ var_dump($_FILES);
+ $filename=$_FILES['pfile']['name'];
+ $type=$_FILES['pfile']['type'];
+ $tmp_name=$_FILES['pfile']['tmp_name'];
+ $size=$_FILES['pfile']['size'];
+ $error=$_FILES['pfile']['error'];
+ move_uploaded_file($tmp_name,"../addons/wx_bookcar/template/picture/".$filename);
+ ?>

@@ -1,0 +1,69 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="viewport" content="width=device-width,minimum-scale=1,user-scalable=no,maximum-scale=1,initial-scale=1"/>
+
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+<meta name="format-detection" content="telephone=no"/>
+
+<meta name="description" content=""/>
+<script type="text/javascript" src="../addons/wx_bookcar/template/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../addons/wx_bookcar/template/js/swiper-3.3.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/frozen.css">
+<link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/style.css">
+<link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/swiper.min.css">
+<title>微信约车</title>
+<body>
+    <div class="demo-block">
+        <div class="tital" >
+            <i class="ui-icon-return" onclick="tz()"></i>
+            <h4>编辑信息</h4> 
+        </div>
+        <div class="form">
+           <form method="post" action="{php echo $this->createMobileUrl('insert')}">
+            <dl>
+                <dt>姓名：</dt>
+                <dd>
+                     <input type="text" name="name" value="{$driver['name']}">
+                </dd>
+            </dl>
+            <dl>
+                <dt>手机号：</dt>
+                <dd>
+                    <input type="text" name="phone" value="{$driver['phone']}">
+                </dd>
+            </dl>
+            <dl>
+                <dt>车型：</dt>
+                <dd>
+                    <input type="text" name="models" value="{$driver['models']}">
+                </dd>
+            </dl>
+            <dl>
+                <dt>车牌号：</dt>
+                <dd>
+                    <input type="text" name="lpnumber" value="{$driver['lpnumber']}">
+                </dd>
+            </dl>
+            <dl>
+                <dt>简介：</dt>
+                <dd>
+                    <textarea name="information"  style="height:200px">{$driver['information']}</textarea>
+                </dd>
+            </dl>
+            <input type="submit"  name="btn" value="提交" class=""/>
+            </form>
+            <button type="button" onclick="up()">上传图片 </button>
+        </div>
+    </div>
+    <script>
+    function tz(){
+             window.location.href='{php echo $this->createMobileUrl('driver')}'
+        }
+    function up(){
+         window.location.href='{php echo $this->createMobileUrl('uppicture')}'
+    }
+    </script>
+</body>
