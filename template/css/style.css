@@ -3,23 +3,27 @@
     position:fixed;
     top:0px;
     width:100%;
-    height:45px;
+    height:55px;
 }
 .cd2{
     position:fixed;
     top:0px;
     z-index:99;
     width:100%;
-    height:45px;
+    height:55px;
 
 }
 .tital{
     width:100%;
-    height:45px;
+    height:55px;
     text-align:center;
-    line-height:45px;
-    background-color:#18b4ed;
+    line-height:55px;
+    background-color:#98e165;
     color:#fff;
+}
+.tital h4{
+        font-size:20px;
+    font-weight:bold;
 }
 .tital a{
         display:block;
@@ -50,25 +54,24 @@
 .main{
     width:100%;
     position:absolute;
-    top:45px;
+    top:55px;
 }
 .main2{
         width:100%;
     position:absolute;
-    top:45px;
+    top:55px;
 }
 .btn{
     position:fixed;
     bottom:30px;
     right:100px;
     z-index: 99;
-    float:left;
     width:70px;
     height:70px;
     border-radius:50%;
-    background-color:#18b4ed;
+    background-color:#98e165;
     color:#fff;
-    opacity:0.5;
+    opacity:0.9;
 }
 
 
@@ -133,4 +136,15 @@
     float:left;
     margin-top:35px;
     margin-left:20px;
+}
+.ruleMain{
+    margin:auto;
+    margin-top:5px;
+    background-color:#fff;
+    width:96%;
+}
+.ruleMain h2{
+    margin:auto;
+    font-size:30px;
+    
 }

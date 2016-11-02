@@ -17,7 +17,6 @@ if($order!=null&&$order['type']==0){
 	);
 	$this->pay($params);
 }else {
-    var_dump(222);
 $driver = pdo_get('wx_bookcar_drivers', array('weid'=>$weid,'open_id' => $openid));
 if($driver==null){
     $price= pdo_get('wx_bookcar_config', array('name'=>'price','weid'=>$weid),array('value'));

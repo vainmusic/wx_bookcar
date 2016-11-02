@@ -1,0 +1,28 @@
+{template 'common/header'}
+<div class="main">
+	<div class="panel panel-info">
+		<div class="panel-heading">配置</div>
+		<div class="panel-body">
+			<form action="{php echo $this->createWebUrl('insert')}" method="post" class="form-horizontal" role="form" id="form1">
+				<input type="hidden" name="c" value="site" />
+				<input type="hidden" name="a" value="entry" />
+				<input type="hidden" name="m" value="wx_bookcar" />
+				<input type="hidden" name="do" value="insert" />
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">订单收费配置(元)</label>
+					<div class="col-sm-8 col-lg-8 col-xs-8">
+						<input class="form-control" name="price" id="" type="text" value="{$data['price']}" placeholder="请输入价格价格">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">规则文本配置</label>
+					<div class="col-sm-8 col-lg-8 col-xs-8">
+						<textarea name="text" id="text" rows="8" cols="40" value="">{$data['text']}</textarea>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-default"  style="margin-left:274px;width:300px" >保存</button>
+			</form>
+		</div>
+	</div>
+</div>
+{template 'common/footer'}

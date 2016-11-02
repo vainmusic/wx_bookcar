@@ -47,15 +47,15 @@ CREATE TABLE `ims_wx_bookcar_config` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `weid` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
-  `value` varchar(11) DEFAULT NULL,
+  `value` text DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;
 -- ----------------------------
 -- Records of ims_wx_bookcar_config
 -- ----------------------------
-INSERT INTO `ims_wx_bookcar_config` VALUES ('0', '0', 'price', null);
-INSERT INTO `ims_wx_bookcar_config` VALUES ('1', '0', 'text', null);
+INSERT INTO `ims_wx_bookcar_config` VALUES ('0', '-1', 'price', '50');
+INSERT INTO `ims_wx_bookcar_config` VALUES ('1', '-1', 'text', '可以在这里定制规则');
 SET FOREIGN_KEY_CHECKS=1;
 
 -- ----------------------------

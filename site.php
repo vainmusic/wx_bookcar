@@ -33,6 +33,12 @@ class Wx_bookcarModuleSite extends WeModuleSite {
 	    require_once(dirname(__FILE__)."/inc/doWebConfig.php");
 		//这个操作被定义用来呈现 管理中心导航菜单
 	}
+		public function doWebInsert() {
+	    
+	    require_once(dirname(__FILE__)."/inc/doWebInsert.php");
+		//这个操作被定义用来呈现 管理中心导航菜单
+	}
+
 	public function doMobilePersonal() {
 		//这个操作被定义用来呈现 微站个人中心导航
 		 require_once(dirname(__FILE__)."/inc/doMobilePersonal.php");
@@ -53,6 +59,10 @@ class Wx_bookcarModuleSite extends WeModuleSite {
 	public function doMobileUpload(){
 	        require_once(dirname(__FILE__)."/inc/doMobileUpload.php");
 	}
+		public function doMobileRule(){
+	        require_once(dirname(__FILE__)."/inc/doMobileRule.php");
+	}
+	
 
 
     public function payResult($params) {

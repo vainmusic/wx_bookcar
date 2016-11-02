@@ -27,9 +27,9 @@
         </div>
     </div>
     {if $id == null}
-<button class="btn ui-btn-primary" onclick="join()">加入</button>
+<button class="btn"  onclick="join1()">加入</button>
 {else}
-<button class="btn ui-btn-primary" onclick="tz()">个人中心</button>
+<button class="btn" onclick="tz()">个人中心</button>
 {/if}
     
     <div class="main">
@@ -55,8 +55,8 @@
     function tz() {
         window.location.href='{php echo $this->createMobileUrl('driver')}'
     }
-    function join(){
-        window.location.href='{php echo $this->createMobileUrl('join')}'
+    function join1(){
+         window.location.href='{php echo $this->createMobileUrl('rule')}'
     }
 </script>
 </body>
