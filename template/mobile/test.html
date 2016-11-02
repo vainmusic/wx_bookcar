@@ -13,8 +13,46 @@
     <meta name="format-detection" content="telephone=no"/>
 
     <meta name="description" content=""/>
+    <script type="text/javascript" src="../addons/wx_bookcar/template/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../addons/wx_bookcar/template/js/swiper-3.3.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/frozen.css">
+    <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/style.css">
+    <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/swiper.min.css">
+    <title>微信约车</title>
 </head>
 <body>
-test
+<button id="btn">测试</button>
+<script>
+
+
+    var url="{php echo $this->createMobileUrl('ajaxDriverAsync')}"
+    $("#btn").click(function () {
+
+        alert("click")
+
+        navigator.geolocation.getCurrentPosition(function(obj){
+            var coords=obj['coords']
+            var longitude=coords['longitude']
+            var latitude=coords['latitude']
+
+
+            $.post(url,{
+                longitude:longitude,
+                latitude:latitude
+            },function(data){
+                alert(JSON.stringify(data))
+            },'json')
+
+/*            alert("经度:"+ longitude);
+            alert("纬度:"+ latitude);*/
+
+        });
+    })
+
+
+
+
+
+</script>
 </body>
 </html>
