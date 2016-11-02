@@ -14,6 +14,11 @@ class Wx_bookcarModuleSite extends WeModuleSite {
         // if(!$_W['openid'])die();
     }
 
+    /*测试用*/
+    public function doMobileTest(){
+        require_once(dirname(__FILE__)."/inc/doMobileTest.php");
+    }
+
     public function doMobileIndex() {
 
         require_once(dirname(__FILE__)."/inc/doMobileIndex.php");
