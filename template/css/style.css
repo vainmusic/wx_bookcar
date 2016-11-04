@@ -1,4 +1,4 @@
-/*列表页面*/
+/* 司机详情页*/
 .cd{
     position:fixed;
     top:0px;
@@ -13,25 +13,149 @@
     height:55px;
 
 }
+
+
+.driverMain{
+    width: 100%;
+
+}
+.div{
+    width:100%;
+    height:100px;
+    margin-top:10px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    position:relative;
+}
+.xq{
+        width:100%;
+    margin-top:10px;
+   /* height:110px;*/
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    position:relative;
+    overflow:hidden;
+     
+}
+.driverMain p{
+    margin-top:35px;
+    margin-left:20px;
+    margin-bottom:15px;
+    word-wrap:break-word;
+    word-break:normal;  
+}
+.driverMain span{
+    position:absolute;
+    left:7px;
+    top:5px;
+    display:inline-block;
+    width:5px;
+    height:20px;
+    background-color:#5cb85c;
+}
+.driverMain h2{
+    position:absolute;
+    left:15px;
+    top:3px;
+    font-weight:bold;
+}
+.driverMain h3{
+    margin-top:35px;
+    margin-left:47px;
+    float:left;
+    clear:both;
+}
+.driverMain h4{
+    margin-top:3px;
+    margin-left:15px;
+    float:left;
+    clear:both;
+}
+
+.driverMain p1{
+    display:block;
+    float:left;
+    margin-top:35px;
+    margin-left:20px;
+}
+.driverMain p2{
+    display:block;
+    float:left;
+    margin-top:3px;
+    margin-left:20px;
+}
+.driverMain h{
+    margin-top:35px;
+    margin-left:15px;
+    float:left;
+    clear:both;
+}
+.main2 img{
+    width:360px;
+    height:200px;
+}
+.main2{
+        width:100%;
+    position:absolute;
+    top:55px;
+}
+
+/*列表页面*/
+.btnMation{
+    background-color:#fff;
+    border:none;
+    color:#98e165;
+    margin-right:20px;
+}
+.form{
+    height:100px;
+}
+.form small{
+    color:#ccc;
+    margin-left:13px;
+}
+.main{
+    width:100%;
+    position:absolute;
+    top:55px;
+}
+
+.indexBtn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    z-index: 99;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background-color:#5cb85c;
+    color:#fff;
+   
+}
+
+/*标题*/
 .tital{
     width:100%;
     height:55px;
     text-align:center;
     line-height:55px;
-    background-color:#98e165;
+    background-color:#5cb85c;
     color:#fff;
 }
 .tital h4{
         font-size:20px;
     font-weight:bold;
+      line-height:50px;
 }
-.tital a{
-        display:block;
+.tital div{
     position:absolute;
-    right:8px;
-    top:10px;
-    color:#fff;
-    font-size:12px;
+    right:10px;
+    top:12px;
+    background-image:url('../img/document.png');
+   width:26px;
+    height:28px;
+    opacity:0.8;
+
 }
 .tital i{
     display:block;
@@ -51,100 +175,93 @@
     text-align:center;
     line-height:30px;
 }
-.main{
-    width:100%;
-    position:absolute;
-    top:55px;
-}
-.main2{
-        width:100%;
-    position:absolute;
-    top:55px;
-}
-.btn{
-    position:fixed;
-    bottom:30px;
-    right:100px;
-    z-index: 99;
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    background-color:#98e165;
-    color:#fff;
-    opacity:0.9;
-}
 
 
-.driverMain{
-    width: 100%;
 
-}
-.driverMain div{
-    width:100%;
-    height:100px;
-    margin-top:10px;
-    border-top:1px solid #ccc;
-    border-bottom:1px solid #ccc;
-    position:relative;
-}
-.driverMain span{
-    position:absolute;
-    left:7px;
-    top:5px;
-    display:block;
-    width:5px;
-    height:20px;
-    background-color:#18b4ed;
-}
-.driverMain h2{
-    position:absolute;
-    left:15px;
-    top:3px;
-}
-.driverMain h3{
-    margin-top:35px;
-    margin-left:47px;
-    float:left;
-    clear:both;
-}
-.driverMain h4{
-    margin-top:3px;
-    margin-left:15px;
-    float:left;
-    clear:both;
-}
-.driverMain p1{
-    display:block;
-    float:left;
-    margin-top:35px;
-    margin-left:20px;
-}
-.driverMain p2{
-    display:block;
-    float:left;
-    margin-top:3px;
-    margin-left:20px;
-}
-.driverMain h{
-    margin-top:35px;
-    margin-left:15px;
-    float:left;
-    clear:both;
-}
-.driverMain p{
-    display:block;
-    float:left;
-    margin-top:35px;
-    margin-left:20px;
-}
+/*规则页面*/
 .ruleMain{
+     width:96%;
     margin:auto;
     margin-top:5px;
     background-color:#fff;
-    width:96%;
+    
+   
+}
+.ruleMain div{
+     width:100%;
+    margin-top:15px;
+    margin:auto;
+    text-align:center;
+    word-wrap:break-word;
+    word-break:normal;  
+
+   
 }
 .ruleMain h2{
-    margin:auto;
-    font-size:30px;
+    font-size:20px;
+    font-weight:bold;
+    color:black;
+}
+.ruleMain p{
+    text-align:left;
+    padding:5px;
+    word-wrap:break-word;
+    word-break:normal;    
+}
+.ruleMain input{
+    height:15px;
+    width:15px;
+    line-height:33px;
+}
+.ruleMain i{
+    margin-left:3px;
+    font-size:15px;
+    line-height:33px;
+    font-weight:bold;
     
 }
+/*信息编辑页面*/
+.form{
+    width:96%;
+    margin:auto;
+}
+.form dt{
+    font-size:25px;
+    color:#ccc;
+}
+.form button{
+    height:45px;
+    margin-bottom:10px;
+}
+/*上传图片界面*/
+.upload{
+    margin:auto;
+}
+.upload div{
+    width:100%;
+    height:50px;
+    margin-top:10px;
+    position:relative;
+}
+.upload span{
+    position:absolute;
+    top:12px;
+    left:5px;
+    font-size:15px;
+    color:#808080;
+}
+.upload input{
+    position:absolute;
+    top:9px;
+    left:130px;
+}
+.uploadBtn{
+    width:96%;
+    height:30px;
+    margin:auto;
+    margin-top:20px;
+}
+
+
+
+

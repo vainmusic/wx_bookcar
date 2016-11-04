@@ -61,16 +61,15 @@ SET FOREIGN_KEY_CHECKS=1;
 -- ----------------------------
 -- Table structure for ims_wx_bookcar_drivers
 -- ----------------------------
-
 CREATE TABLE `ims_wx_bookcar_drivers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `weid` int(11) NOT NULL,
   `create_time` datetime NOT NULL,
   `open_id` text NOT NULL,
   `update_time` datetime DEFAULT NULL,
-  `longitude` float(255,0) DEFAULT NULL,
+  `longitude` decimal(10,7) DEFAULT NULL,
   `head_img_path` text,
-  `latitude` float(255,0) DEFAULT NULL,
+  `latitude` decimal(10,7) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `models` varchar(255) DEFAULT NULL,
@@ -80,7 +79,7 @@ CREATE TABLE `ims_wx_bookcar_drivers` (
   `twop` varchar(255) DEFAULT NULL,
   `threep` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;
 
 -- ----------------------------

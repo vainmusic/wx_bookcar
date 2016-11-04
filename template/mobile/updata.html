@@ -1,3 +1,4 @@
+{template 'common/header'}
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <meta name="viewport" content="width=device-width,minimum-scale=1,user-scalable=no,maximum-scale=1,initial-scale=1"/>
@@ -15,50 +16,81 @@
 <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/style.css">
 <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/swiper.min.css">
 <title>微信约车</title>
-<body>
+
     <div class="demo-block">
         <div class="tital" >
             <i class="ui-icon-return" onclick="tz()"></i>
             <h4>编辑信息</h4> 
         </div>
         <div class="form">
-           <form method="post" action="{php echo $this->createMobileUrl('insert')}">
+           <form method="post" id="form" action="{php echo $this->createMobileUrl('insert')}" role="form">
             <dl>
-                <dt>姓名：</dt>
+                <dt >姓名：</dt>
                 <dd>
-                     <input type="text" name="name" value="{$driver['name']}">
+                     <input type="text" name="name"  id="name" value="{$driver['name']}" placeholder="请输入你有效的称呼">
                 </dd>
+                
             </dl>
             <dl>
                 <dt>手机号：</dt>
                 <dd>
-                    <input type="text" name="phone" value="{$driver['phone']}">
+                    <input  type="text" name="phone" id="phone" value="{$driver['phone']}" placeholder="请输入你有效的手机号">
                 </dd>
             </dl>
             <dl>
                 <dt>车型：</dt>
                 <dd>
-                    <input type="text" name="models" value="{$driver['models']}">
+                    <input type="text" name="models" id="models" value="{$driver['models']}"  placeholder="请输入你有效的车型">
                 </dd>
             </dl>
             <dl>
                 <dt>车牌号：</dt>
                 <dd>
-                    <input type="text" name="lpnumber" value="{$driver['lpnumber']}">
+                    <input type="text" name="lpnumber" id="lpnumber" value="{$driver['lpnumber']}" placeholder="请输入你的车牌号">
                 </dd>
             </dl>
             <dl>
                 <dt>简介：</dt>
                 <dd>
-                    <textarea name="information"  style="height:200px">{$driver['information']}</textarea>
+                    <textarea id="information" name="information"  style="height:100px" placeholder="这里你可以写上对自己的个人简介，让客户更加了解你哦">{$driver['information']}</textarea>
                 </dd>
             </dl>
-            <input type="submit"  name="btn" value="提交" class=""/>
             </form>
-            <button type="button" onclick="up()">上传图片 </button>
+            <button type="button" onclick="up()"  class="btn btn-block">上传图片 </button>
+            <button type="button"  onclick="btn()"  class="btn btn-block btn-success" >提交</button>
+            
         </div>
     </div>
     <script>
+    function btn(){
+        var phone=$('#phone').val()
+        var name=$('#name').val()
+        var models=$('#models').val()
+        var lpnumber=$('#lpnumber').val()
+        var information=$('#information').val()
+        var regMobile=/^1[34578]\d{9}$/
+        var reg = /^[\u2E80-\u9FFF]+$/
+         console.log(regMobile)
+        if(name==''){
+            alert('姓名不能为空');
+        }else if(!reg.test(name)){
+            alert('姓名输入了非法字符')
+        }else if(phone==''){
+           alert('手机号不能为空');
+           
+      }else if(!regMobile.test(phone)){
+          alert('输入的手机号有误');
+       }else if(models==''){
+            alert('车型不能为空');
+       }else if(lpnumber==''){
+            alert('车牌号不能为空');
+       }else if(information==''){
+           alert('请完善个人简介让你的乘客更了解你哦')
+       }else{
+           $('#form').submit()
+       }
+    }
+
     function tz(){
              window.location.href='{php echo $this->createMobileUrl('driver')}'
         }
@@ -66,4 +98,3 @@
          window.location.href='{php echo $this->createMobileUrl('uppicture')}'
     }
     </script>
-</body>

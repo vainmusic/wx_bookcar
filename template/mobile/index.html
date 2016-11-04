@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no"/>
 
     <meta name="description" content=""/>
-    <script type="application/javascript" scr="../addons/wx_bookcar/template/js/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="../addons/wx_bookcar/template/js/jquery-2.1.0.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/frozen.css">
     <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/style.css">
 
@@ -27,24 +27,30 @@
         </div>
     </div>
     {if $id == null}
-<button class="btn"  onclick="join1()">加入</button>
+<button class="indexBtn" style="background-image:url('../addons/wx_bookcar/template/img/money.png')" onclick="join()"></button>
 {else}
-<button class="btn" onclick="tz()">个人中心</button>
+<button class="indexBtn" style="background-image:url('../addons/wx_bookcar/template/img/personalt.png')" onclick="tz()"></button>
 {/if}
     
     <div class="main">
         <section class="ui-container ">
            <ul class="ui-list ui-list-function  ui-border-tb">
-               {loop  $datas $data}
-                    <li class="ui-border-t" style="height:100px">
-                        <div class="ui-avatar-one" style="margin-top:15px">
-                            <span style="background-image:url(http://placeholder.qiniudn.com/80x80)"></span>
+               {loop  $new $data}
+               <form id="form" class="ui-list ui-border-t form"  action="{php echo $this->createMobileUrl('driver')}" method="post" accept-charset="utf-8">
+                    <li  class="ui-border-t" style="height:100px"  >
+                        <div class="ui-avatar-one" style="margin-top:15px" >
+                            <span><img style="width:70px;height:70px" src="../addons/wx_bookcar/template/picture/{$data['path']}" alt="" /></span>
                         </div>
                         <div class="ui-list-info">
-                            <h4 class="ui-nowrap" style="margin-left:15px">{$data['name']}</h4>
+                            <h4 class="ui-nowrap"  style="margin-left:15px">{$data['name']}</h4>
+                            <small class="ctrl-position"  longitude="{$data['longitude']}" latitude="{$data['latitude']}"></small><br>
+                            <small>{$data['disparity']}分钟 </small>
                         </div>
-                        <div class="ui-btn">联系我</div>
+                         <input type="hidden" name="value"  value="{$data['id']}" />
+                        <a class="ui-btn" style="margin-top:3px"  href="telephone">联系我</a>
+                        <input class="btnMation"  style="margin-top:15px" type="submit" value="详细信息" />
                     </li>
+               </form>
                 {/loop}
             </ul>
         </section>
@@ -52,12 +58,69 @@
 </div>
 
 <script>
-    function tz() {
-        window.location.href='{php echo $this->createMobileUrl('driver')}'
+    var  lot1=119.238996
+    var  lat1=26.05725
+    var  lot2=119.20915
+    var  lat2=26.045436
+    /*根据经纬度计算距离*/
+    function Rad(d){
+      return d * Math.PI / 180.0;//经纬度转换成三角函数中度分表形式。
     }
-    function join1(){
+    function calculation(lot1,lat1,lot2,lat2){
+     var  a = Rad(lot1) - Rad(lot2);
+     var  b = Rad(lat1) - Rad(lat2);
+        var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a/2),2) +
+        Math.cos(Rad(lat1))*Math.cos(Rad(lat2))*Math.pow(Math.sin(b/2),2)));
+        s = s *6378.137 ;
+        s = Math.round(s * 10000) / 10000; //输出为公里
+        return s;
+        
+    }
+        
+
+    /*执行跳转*/
+    function tz() {
+         window.location.href='{php echo $this->createMobileUrl('driver')}'
+    }
+    function join(){
          window.location.href='{php echo $this->createMobileUrl('rule')}'
     }
+    
+    
+    $(function(){
+        var url="{php echo $this->createMobileUrl('ajaxDriverAsync')}"
+        navigator.geolocation.getCurrentPosition(function(obj){
+            var coords=obj['coords']
+            var longitude=coords['longitude']
+            var latitude=coords['latitude']
+            $.post(url,{
+                longitude:longitude,
+                latitude:latitude
+            },function(data){
+             //   alert(JSON.stringify(data))
+            },'json')
+            
+            
+            $(".ctrl-position").each(function(index,element){
+                var m_longitude=$(element).attr("longitude")
+                var m_latitude=$(element).attr("latitude")
+                
+                
+                var l=calculation(longitude,latitude,m_longitude,m_latitude)
+                
+                $(element).text(l+"km")
+        
+          
+          
+                
+            })
+            
+        });
+    })
+    
+
+    
+    
 </script>
 </body>
 </html>

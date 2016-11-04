@@ -20,34 +20,37 @@
     <div class="cd2">
         <div class="tital" >
             <i class="ui-icon-return" onclick="tz()"></i>
-            <h4>个人中心</h4> 
-            <a onclick="gx()">编辑</a>
+            <h4>个人中心</h4>
+            {if $value==$openid||$value==""}
+            <div type="button" onclick="gx()" ></div>
+            {/if}
         </div>
      </div>
     <div class="main2">
         <div class="swiper-container" style="height:200px" >
          <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-color:#ccc;">slider1</div>
-            <div class="swiper-slide" style="background-color:#ccc;">slider2</div>
-            <div class="swiper-slide" style="background-color:#ccc;">slider3</div>
+            <div class="swiper-slide" style="background-color:#ccc;"><img src="../addons/wx_bookcar/template/picture/{$data['onep']}" alt="" /></div>
+            <div class="swiper-slide" style="background-color:#ccc;"><img src="../addons/wx_bookcar/template/picture/{$data['twop']}" alt="" /></div>
+            <div class="swiper-slide" style="background-color:#ccc;"><img src="../addons/wx_bookcar/template/picture/{$data['threep']}" alt="" /></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
         <div class="driverMain">
-            <div>
-                <span class="top"></span><h2>  司机信息</h2>
+            <div class="div">
+                <span class="top"></span><h2>司机信息</h2>
                 <h3>姓名：</h3><p1>{$data['name']} </p1><br>
                 <h4>电话号码：</h4><p2>{$data['phone']} </p2>
             </div>
-            <div>
-                <span class="top"></span><h2> 车子信息</h2>
+            <div class="div">
+                <span class="top"></span><h2>车子信息</h2>
                 <h3> 车型：</h3><p1>{$data['models']}</p1><br>
                 <h4> 车牌号码：</h4><p2>{$data['lpnumber']}</p2>
             </div>    
-            <div>
-                <span class="top"></span><h2> 简介</h2>
-                <h>个人简介：</h><p>{$data['information']}</p><br>
+            <div id="xq" class="xq" >
+                <span class="top"></span><h2>简介</h2>
+                <h>个人简介：</h><p>{$data['information']}</p>
             </div>
+            
         </div>
     </div>
 </div>
@@ -56,8 +59,25 @@
 var mySwiper = new Swiper('.swiper-container', {
 	autoplay:3000,
 	pagination:'.swiper-pagination',
-	
-})
+	})
+    var height=$('#xq').height();
+    if(height>=100){
+        $("#xq").after("<a id='xqBtn' onclick='xq()' style='margin-left:10px' >详情信息</a>")
+        $('#xq').css('height','110px')
+    }
+	var i=1
+	function xq(){
+	    if(i==1){
+	     $('#xq').css('height','auto')
+	     $('#xqBtn').text("收起")
+	        i=0
+	    }else{
+	        
+	        $('#xq').css('height','110px')
+	        $('#xqBtn').text("详情信息")
+	        i=1
+	    }
+	}
     function gx(){
         window.location.href='{php echo $this->createMobileUrl('updata')}'
     }

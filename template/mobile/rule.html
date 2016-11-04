@@ -13,22 +13,38 @@
     <meta name="format-detection" content="telephone=no"/>
 
     <meta name="description" content=""/>
-    <script type="application/javascript" scr="../addons/wx_bookcar/template/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../addons/wx_bookcar/template/js/jquery-2.1.0.min.js"></script>
     <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/frozen.css">
     <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/style.css">
 
     <title>微信约车</title>
 </head>
 <body>
-    <div class="ruleMain">
-        <h2>加入须知</h2>
-        <p>{$data['value']}</p>
-       <button class="btn-primary" onclick="join()">接受</button>
+    <div class="ruleMain" >
+        <div >
+            <h2>加入须知</h2>
+        </div>
+        <div >
+            <p>{$data['value']}</p>
+        </div>
+        <div>
+            <i><input type="checkbox"  id="ck" />我同意</i>
+            <button  id="btn" class="ui-btn" onclick="join()" disabled>下一步</button>
+        </div>    
     </div>
-          <script>
+    <script>
         function join() {
-           window.location.href='{php echo $this->createMobileUrl('join')}'
+          window.location.href='{php echo $this->createMobileUrl('join')}'
         }
-        </script>
+        $('#ck').click(function () {
+        if($(this).prop('checked')==true){
+            $('#btn').attr('disabled',false)
+        }else{
+            $('#btn').attr('disabled',true)
+        }
+            }
+
+        )
+    </script>
     </body>
 </html>

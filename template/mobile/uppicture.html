@@ -1,3 +1,4 @@
+{template 'common/header'}
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <meta name="viewport" content="width=device-width,minimum-scale=1,user-scalable=no,maximum-scale=1,initial-scale=1"/>
@@ -15,16 +16,25 @@
 <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/style.css">
 <link type="text/css" rel="stylesheet" href="../addons/wx_bookcar/template/css/swiper.min.css">
 <title>微信约车</title>
-<body>
     <div class="demo-block">
         <div class="tital" >
             <i class="ui-icon-return" onclick="tz()"></i>
             <h4>编辑信息</h4> 
         </div>
-        <form action="{php echo $this->createMobileUrl('upload')}" method="post" enctype="multipart/form-data">
-            请选择图片：
-            <input type="file" name="pfile"  accept="image/jpeg,image/png" />
-            <input type="submit" name="btn" id="btn" value="保存" />
+        <form class="upload" action="{php echo $this->createMobileUrl('upload')}" method="post" enctype="multipart/form-data">
+            <div>
+                <span>请选择头像图片：</span>
+                <input type="file" name="pfile"  accept="image/jpeg,image/png"  />
+            </div>
+            <div>
+                <span>请选择背景图片：</span>
+                <input type="file" name="pfile2"  accept="image/jpeg,image/png" />
+            </div>
+            <div>
+                <span>请选择背景图片：</span>
+                <input type="file" name="pfile3"  accept="image/jpeg,image/png" />
+            </div>
+            <button class="uploadBtn btn-block btn-success" type="submit"  id="btn">保存</button>
         </form>
     </div>
     <script>
@@ -32,4 +42,3 @@
             window.location.href='{php echo $this->createMobileUrl('updata')}'
         }
     </script>
-</body>
